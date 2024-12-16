@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="de">
-<>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Bookstore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playwrite+IN+Guides&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap" rel="stylesheet">
+
+    <title>Book Store</title>
 
     <link href="./styles/standard.css" rel="stylesheet">
     <link href="./styles.css" rel="stylesheet">  
@@ -15,10 +23,85 @@
 
 
 <body>
+    
+    <div class="headline-container">
+        
+        <div class="headline-logo">
+            <img src="./img/logos/book store logo lila.png" alt="Book Store logo">
+        </div>
+        
+        <div class="headline-txt">
+            
+            <span class="headline-txt-Book_Store">BOOK STORE&nbsp;</span>
+            <!-- <span class="headline-txt-get-your-book">&nbsp;get_your_book_here</span> -->
+        
+        </div>
+    </div>
+    
+    <div class="book-card-container">
 
-    <header>
-        <h1>Book Store/h1>        
-    </header>
+        <div class="book-name"><b>Name des  Buches</b>
+        </div>
+
+        <div class="book-picture">
+            Bild des Buches
+        </div>
+
+        <div class="book-informations">
+
+            <div class="price-and-likes">
+                <div class="price">
+                    <b>Preis</b>
+                </div>
+
+                <div class="likes">
+                    <b class="amount-likes"></b>
+                    <img src="./img/logos/heart.png" alt="heart likes">
+                </div>
+            </div>
+
+            <div class="author-and-year-of-publication">
+
+                <div class="author-and-authorname">
+    
+                </div>
+
+                <div class="year-of-publication-and-date">                    
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="comments-container">
+
+            <div class="comments-headline-container">
+                <p class="comments-headline-txt"></p>
+            </div>
+
+            <div class="comments-reader-container">
+
+                <div class="comments-name-reader">
+                    <b class="name-reader"></b>
+                </div>
+    
+                <div class="comments-comment-reader">
+                    <b class="comment-reader"></b>
+                </div>
+
+            </div>
+
+            <div class="write-a-comment">
+                <input type="text" name="comment" value="schreibe gerne einen Kommentar">
+
+                <div class="send-comment">
+                    <img class="paper-plane-img" onclick="submitComment" href="./img/logos/submit comment paper plane.png"></img>flieger
+                </div>
+            </div>
+
+        </div>
+
+    </div>
 
     
 </body>

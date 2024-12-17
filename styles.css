@@ -89,26 +89,101 @@ body {
 .price-and-likes {
   display: flex;
   justify-content: space-between;
-}
-
-.price{
 
 }
 
-.price-amount{
-    
+.price {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.likes{
-
+.price-amount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.amount-likes{
+.likes {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
 
+.like-count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.like-button {
+  height: 25px;
+  display: flex;
+}
+
+.likes-logo-heart-img {
+    height: 25px;
+    background-color: none;
 }
 
 .author-and-year-of-publication {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.author-and-authorname {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.year-of-publication-and-date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comments-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.comments-headline-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.comments-headline-txt {
+  display: flex;
+}
+
+.comments-reader-container {
+}
+
+.comments-name-reader {
+}
+
+.name-reader {
+}
+
+.comments-comment-reader {
+}
+
+.comment-reader {
+}
+
+.write-a-comment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-inputfield {
+}
+
+.send-comment {
+}
+
+.paper-plane-img {
 }

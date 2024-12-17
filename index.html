@@ -18,6 +18,7 @@
     <link href="./styles.css" rel="stylesheet">  
 
     <script src="./script.js"></script>
+    <script src="./scripts/likeCounter.js"></script>
 
 </head>
 
@@ -50,15 +51,17 @@
         <div class="book-informations">
 
             <div class="price-and-likes">
-                <div class="price">
-                    <b>Preis</b>
+
+                <div class="price">0,00
+                    <b class="price-amount">Preis</b>
                 </div>
 
                 <div class="likes">
-                    <b class="amount-likes"></b>
-                    <img src="./img/logos/heart.png" alt="heart likes">
+                    <button onclick="countOnClick()" class="like-button" id="likeButton">
+                        <img class="likes-logo-heart-img" src="./img/logos/heart empty.png" alt="like button">
+                    </button>
+                    <span class="like-count" id="likeCount">0</span>
                 </div>
-            </div>
 
             <div class="author-and-year-of-publication">
 
@@ -76,7 +79,7 @@
         <div class="comments-container">
 
             <div class="comments-headline-container">
-                <p class="comments-headline-txt"></p>
+                <p class="comments-headline-txt">Kommentare:</p>
             </div>
 
             <div class="comments-reader-container">
@@ -92,7 +95,7 @@
             </div>
 
             <div class="write-a-comment">
-                <input type="text" name="comment" value="schreibe gerne einen Kommentar">
+                <input class="comment-inputfield" type="text" name="comment" value="schreibe gerne einen Kommentar">
 
                 <div class="send-comment">
                     <img class="paper-plane-img" onclick="submitComment" href="./img/logos/submit comment paper plane.png"></img>flieger

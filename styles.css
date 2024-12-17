@@ -83,13 +83,13 @@ body {
 
 .book-informations {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  
 }
 
 .price-and-likes {
   display: flex;
-  justify-content: space-between;
+
   height: 50px;
 }
 
@@ -169,7 +169,7 @@ body {
   display: flex;
 }
 
-.comments-comment-reader {
+.show-comment-reader {
   display: flex;
 }
 
@@ -193,6 +193,9 @@ body {
 }
 
 .paper-plane-img {
-  height: 30px;
   display: flex;
+}
+
+.paper-plane-img:hover {
+cursor: pointer;
 }

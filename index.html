@@ -19,6 +19,7 @@
 
     <script src="./script.js"></script>
     <script src="./scripts/likeCounter.js"></script>
+    <script src="./scripts/comment.js"></script>
 
 </head>
 
@@ -89,16 +90,16 @@
                 </div>
     
                 <div class="comments-comment-reader">
-                    <b class="comment-reader"></b>
+                    <b id="lastCommentReader" class="comment-reader"></b>
                 </div>
 
             </div>
 
             <div class="write-a-comment">
-                <input class="comment-inputfield" type="text" name="comment" value="schreibe gerne einen Kommentar">
+                <input id="typeInField" class="comment-inputfield" type="text" name="comment" value="schreibe gerne einen Kommentar">
 
                 <div class="send-comment">
-                    <img class="paper-plane-img" onclick="submitComment" href="./img/logos/submit comment paper plane.png"></img>flieger
+                    <img id="submitComment" class="paper-plane-img" onclick="submitComment" type="submit" href="./img/logos/submit comment paper plane.png"></img>
                 </div>
             </div>
 

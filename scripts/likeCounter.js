@@ -1,28 +1,3 @@
-// let likeCount = document.getElementById("likeCount").innerHTML;
-
-// function countOnClick() {
-
-//   let likeCount = +document.getElementById("likeCount");
-
-//   switch (likeButton) {
-//     case "likeCount":
-//       if (likeButton == falsee) {
-//         likeCount++;
-//         likeButton = true;
-//       } else if (likeButton == false) {
-//         likeCount = likeCount + 1;
-//         likeButton = true;
-//       } else {
-//         likeCount--;
-//         likeButton = false;
-//       }
-//   }
-// }
-
-
-
-
-
 
 let liked = false;                                                  // true ist ge likeed... false ist ent bzw nicht liked
 

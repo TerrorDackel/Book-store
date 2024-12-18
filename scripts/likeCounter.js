@@ -27,3 +27,42 @@ let likeButton = document.getElementById("likeButton");           // Bild beim d
     likeButton.innerHTML = '<img class="likes-logo-heart-img" src="./img/logos/heart empty.png" alt="like button">'; //dann wirds leere herz angezeigt.
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // function toggleLike(index) {                                      //function switchen liken und ent liken
+// //   const book = books[index];                                      
+// //   book.liked = !book.liked; // Like-Status umschalten
+// //   book.likes = book.liked ? book.likes + 1 : book.likes - 1; // Likes erhöhen oder verringern
+  
+// //   displayBooks(); // Bücher neu rendern, um den aktualisierten Like-Status anzuzeigen
+// // }
+
+
+// displayBooks(); 

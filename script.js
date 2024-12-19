@@ -1,40 +1,89 @@
+function init() {
+    renderBooks();
+};
 
-// unklar hilfe video machen 
+function createBookHtml(book, indexBook) {                                                                                  // erstellt den html code
+    return  `
+        <div class="book">
+            <h4>${book.name}</h4>
+            <h5>Author: ${book.author}</h5>
+            <img class="bookImage" src="${book.img}">
+            <div class="Likes">
+                <p class="likes">likes: ${book.likes}&nbsp;</p>
+                <button onclick="toggleLike(${indexBook})" class="like-btn ${book.liked ? 'liked' : ''}">
+                    <img src="img/logos/heart full.png" class="heart-icon filled" />
+                    <img src="img/logos/heart empty.png" class="heart-icon empty" />
+                </button>
+            </div>
+            <div class="published-year-genre">
+                <p>${book.publishedYear}&nbsp;${book.genre}</p>
+            </div>
+            <p class="price">Preis: ${book.price}€</p>
+            <p class="comment-headline">Kommentar:</p>
+            <div class="comment-container">
+                <div class="comment-show">
+                    ${renderComments(book.comments)}
+                </div>
+                <div class="comment-container-comment-with-button">
+                    <div class="comment-container-comment-without-button">
+                    <input id="commentName-${indexBook}" type="text" placeholder="schreibe einen Kommentar">
+                    <input id="commentText-${indexBook}" type="text" placeholder="">
+                     </div>
+                    <button class="paper-plan-btn" onclick="addComment(${indexBook})">
+                    <img class="paper-plan-img" src="./img/logos/paper plan img.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+}
 
-// mit json datei? array da  drin function in js aufrufen lassen und dann verwenden?
-// container mit js neuen kreieren? oder  leere in html und da befüllen
-// habe pfad img zu array dazu falsch?
+function addComment(bookIndex) {
+    const name = document.getElementById(`commentName-${bookIndex}`).value;                                                 //holt den namen
+    const text = document.getElementById(`commentText-${bookIndex}`).value;                                                 // holt den text
+
+    if (name && text) {                                                                                                     //überprüft ob name und text ausgefüllt sind
+        books[bookIndex].comments.push({ name, comment: text });                                                            // fügt neueen kommentar hinzu
+        renderBooks();                                                                                                      // rendert bücher neu um neuen kommentar anzuzeigen
+    }
+}
+
+function renderComments(comments) {
+    let commentsHtml = "";
+    for (let indexComment = 0; indexComment < comments.length; indexComment++) {
+        let comment = comments[indexComment];                                                                               //speichert den aktuellen kommentar
+        commentsHtml += `
+            <div class="comment">
+                <p class="comment-show">${comment.comment}</p>
+            </div>
+        `;
+    }
+    return commentsHtml;
+}
+ 
+function renderBooks() {
+    let contentRef = document.getElementById('booksGallery');                                                                 // hol den referenz auf element mit id booksGallery                                         
+    contentRef.innerHTML = "";                                                                                               // leert den inhalt
+
+    let allBooksHTML = ""; 
+
+    for (let indexBook = 0; indexBook < books.length; indexBook++) {                                                         // durchläuft alle bücher im array
+        let book = books[indexBook];
+        let bookHTML = createBookHtml(book, indexBook); 
+        let commentsHTML = renderComments(book.comments);                                                                   // erstellt den html code für das buch                                                                   // erstellt den html code für die kommentare
+        bookHTML = bookHTML.replace('{{comments}}', commentsHTML); 
+        allBooksHTML += bookHTML;                                                                                           // fügt das buch zum gesamten html code der bücher hinzu
+    }
+    contentRef.innerHTML = allBooksHTML; 
+}
+
+function toggleLike(bookIndex) {
+    const book = books[bookIndex];                                                                                          // holt buch anhand index
+    book.liked = !book.liked;                                                                                               // kehrt zustand von liked um
+    book.likes += book.liked ? 1 : -1;                                                                                      // passt anzahl der likes an
+    renderBooks();
+    console.log(book.liked);                                                                                                //gibt aktuellen zustand aus
+}
 
 
 
-// let currentIndex = 0;                                                  //startet bei 0
-
-
-// function displayBooks() {                                              //function, books anzeigen
-//   const container = document.getElementById('booksContainer');         // constantinante container ist id booksContainer
-//   container.innerHTML = '';                                            // container leeren
-
-//   books.forEach((book, index) => {                                     // durch jedes buch im array blättern
-//     const bookElement = document.createElement('div');                 // div container über js hinzufügen Parameter?????
-//     bookElement.classList.add('book');
-    
-//   });
-// }
-
-// neu laden mit onload??? laden der seite und anzeien lassen
-                                             
-
-// function getJSONByAPI(){                                                //holt daten  aus  json datei
-//   fetch("./src/scripts/book.json").then((response) => {                 // fetch gibt  promis zurück dateiname und  lokalisation
-//     console.log(response);
-//     return response.json()
-//   })
-//   .then((profile) => {
-//     console.log(profile);
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   });
-// }
-
-// getJSONByAPI();

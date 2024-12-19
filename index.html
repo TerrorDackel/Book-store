@@ -17,15 +17,13 @@
     <link href="./styles/standard.css" rel="stylesheet">
     <link href="./styles.css" rel="stylesheet">  
 
+    <script src="./scripts/db.js"></script>
+    <script src="./scripts/templates.js"></script>
     <script src="./script.js"></script>
-    <script src="./scripts/likeCounter.js"></script>
-    <script src="./scripts/comment.js"></script>
+    
 
 </head>
-
-
-<body>
-    <element onload="myScript"></element>
+<body onload="init()">
     <div class="headline-container">
         
         <div class="headline-logo">
@@ -33,86 +31,14 @@
         </div>
         
         <div class="headline-txt">
-            
-            <span class="headline-txt-Book_Store">BOOK STORE&nbsp;</span>
-            <!-- <span class="headline-txt-get-your-book">&nbsp;get_your_book_here</span> -->
-        
+            <span   span class="headline-txt-Book_Store">BOOK STORE&nbsp;</span>
+            <span class="headline-txt-get-your-book">&nbsp;get_your_book_here</span>        
         </div>
     </div>
-    
-    <div id="booksContainer" class="book-card-container">
-        <div class="book-one">
-            <div class="book-name"><b id="booksName">Die Geheimnisse des Ozeans</b>
-            </div>
-
-            <div class="book-picture">
-                <img id="booksPicture" src="./img/Die Geheimnisse des Ozeans.jpg" alt="">
-            </div>
-
-            <div class="book-informations">
-
-                <div class="price-and-likes">
-
-                    <div class="price">19,99$
-                        <b id="booksPrice" class="price-amount">Preis</b>
-                    </div>
-
-                    <div class="likes">
-                        <button onclick="countOnClick()" class="like-button" id="likeButton">
-                            <img class="likes-logo-heart-img" src="./img/logos/heart empty.png" alt="like button">
-                        </button>
-                        <span class="like-count" id="likeCount">99</span>
-                    </div>
-
-                <div class="author-and-year-of-publication">
-
-                    <div class="author-and-authorname">
-                        <b id="booksAuthor">Clara Meer</b>
-                    </div>
-
-                    <div class="year-of-publication-and-date">     
-                        <b id="booksPublishedYear">2018</b>               
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="comments-container">
-
-                <div class="comments-headline-container">
-                    <p class="comments-headline-txt">Kommentare:</p>
-                </div>
-
-                <div class="comments-reader-container">
-
-                    <div class="comments-name-reader">
-                        <b class="name-reader"></b>
-                    </div>
-    
-                    <div class="show-comment-reader">
-                        <b id="lastCommentReader" class="comment-reader"></b>
-                        <b id="booksComments"></b>
-                    </div>
-
-                </div>
-
-                <div class="write-a-comment">
-                    <input id="typeInField" class="comment-inputfield" type="text" name="typeInField" value="Schreibe einen Kommentar.">
-
-                    <div class="send-comment">
-                        <img id="submitComment" class="paper-plane-img"  src="./img/logos/submit comment paper plane.png"></img>
-                    </div>
-
-                </div>
-
-            </div>
-
+    <div class="body-container">
+        <div id="booksGallery">
         </div>
-        
-
     </div>
-
     
 </body>
 

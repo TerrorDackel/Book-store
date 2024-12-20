@@ -26,8 +26,8 @@ function createBookHtml(book, indexBook) {                                      
                 </div>
                 <div class="comment-container-comment-with-button">
                     <div class="comment-container-comment-without-button">
-                    <input id="commentName-${indexBook}" type="text" placeholder="schreibe einen Kommentar">
-                    <input id="commentText-${indexBook}" type="text" placeholder="">
+                    <input id="commentName-${indexBook}" type="text" placeholder="Name:">
+                    <input id="commentText-${indexBook}" type="text" placeholder="Schreibe einen Kommentar:">
                      </div>
                     <button class="paper-plan-btn" onclick="addComment(${indexBook})">
                     <img class="paper-plan-img" src="./img/logos/paper plan img.png">
@@ -43,7 +43,7 @@ function addComment(bookIndex) {
     const text = document.getElementById(`commentText-${bookIndex}`).value;                                                 // holt den text
 
     if (name && text) {                                                                                                     //überprüft ob name und text ausgefüllt sind
-        books[bookIndex].comments.push({ name, comment: text });                                                            // fügt neueen kommentar hinzu
+        books[bookIndex].comments.push({ name: name, comment: text });                                                            // fügt neueen kommentar hinzu
         renderBooks();                                                                                                      // rendert bücher neu um neuen kommentar anzuzeigen
     }
 }
@@ -54,7 +54,7 @@ function renderComments(comments) {
         let comment = comments[indexComment];                                                                               //speichert den aktuellen kommentar
         commentsHtml += `
             <div class="comment">
-                <p class="comment-show">${comment.comment}</p>
+                <p class="comment-show">${comment.name}:  ${comment.comment}</p>
             </div>
         `;
     }
@@ -78,11 +78,11 @@ function renderBooks() {
 }
 
 function toggleLike(bookIndex) {
-    const book = books[bookIndex];                                                                                          // holt buch anhand index
-    book.liked = !book.liked;                                                                                               // kehrt zustand von liked um
-    book.likes += book.liked ? 1 : -1;                                                                                      // passt anzahl der likes an
+    const book = books[bookIndex];                                                                                          
+    book.liked = !book.liked;                                                                                               
+    book.likes += book.liked ? 1 : -1;                                                                                      
     renderBooks();
-    console.log(book.liked);                                                                                                //gibt aktuellen zustand aus
+    console.log(book.liked);                                                                                                
 }
 
 
